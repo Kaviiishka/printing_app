@@ -214,7 +214,7 @@ class Client extends StatelessWidget {
                                         ),
                                         Container(
                                           height: 35.h,
-                                          width: 600.h,
+                                          width: 630.h,
                                           //color: Colors.white,
                                           child: TextField(
                                             controller: _clientController,
@@ -261,7 +261,7 @@ class Client extends StatelessWidget {
                                         ),
                                         Container(
                                           height: 35.h,
-                                          width: 600.h,
+                                          width: 630.h,
                                           //color: Colors.white,
                                           child: TextField(
                                             controller: _jobController,
