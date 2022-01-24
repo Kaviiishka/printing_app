@@ -86,7 +86,7 @@ class _PressState extends State<Press> {
                         height: 637.h,
                         width: 1436.w,
                         decoration: BoxDecoration(
-                          color: Colors.grey.withOpacity(0.75),
+                          color: Colors.black.withOpacity(0.75),
                           borderRadius:
                               BorderRadius.all(Radius.circular(20.sp)),
                         ),
@@ -189,7 +189,7 @@ class _PressState extends State<Press> {
                                         style: TextStyle(
                                           fontFamily: 'Comfortaa',
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
+                                          fontSize: 16.sp,
                                           color:
                                               Color.fromRGBO(255, 255, 255, 1),
                                         ),
@@ -263,7 +263,7 @@ class _PressState extends State<Press> {
                                         style: TextStyle(
                                           fontFamily: 'Comfortaa',
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
+                                          fontSize: 16.sp,
                                           color:
                                               Color.fromRGBO(255, 255, 255, 1),
                                         ),
@@ -337,7 +337,7 @@ class _PressState extends State<Press> {
                                         style: TextStyle(
                                           fontFamily: 'Comfortaa',
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
+                                          fontSize: 16.sp,
                                           color:
                                               Color.fromRGBO(255, 255, 255, 1),
                                         ),
@@ -411,7 +411,7 @@ class _PressState extends State<Press> {
                                         style: TextStyle(
                                           fontFamily: 'Comfortaa',
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
+                                          fontSize: 16.sp,
                                           color:
                                               Color.fromRGBO(255, 255, 255, 1),
                                         ),
@@ -485,7 +485,7 @@ class _PressState extends State<Press> {
                                         style: TextStyle(
                                           fontFamily: 'Comfortaa',
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
+                                          fontSize: 16.sp,
                                           color:
                                               Color.fromRGBO(255, 255, 255, 1),
                                         ),

@@ -19,24 +19,25 @@ class _Pre_pressState extends State<Pre_press> {
   late String tp2;
   late String tp3;
   late String tp4;
-  late String rm1;
-  late String rm2;
-  late String rm3;
-  late String rm4;
+
+  late double rm1;
+  late double rm2;
+  late double rm3;
+  late double rm4;
 
   late double ut1;
   late double ut2;
   late double ut3;
   late double ut4;
-  late double qt1;
-  late double qt2;
-  late double qt3;
-  late double qt4;
+  // late double qt1;
+  // late double qt2;
+  // late double qt3;
+  // late double qt4;
 
-  double result1 = 0;
-  double result2 = 0;
-  double result3 = 0;
-  double result4 = 0;
+  late double qty1 = 0;
+  late double qty2 = 0;
+  late double qty3 = 0;
+  late double qty4 = 0;
   double result = 0;
 
   // final TextEditingController _controllera1 = TextEditingController();
@@ -50,27 +51,31 @@ class _Pre_pressState extends State<Pre_press> {
   final TextEditingController _controller1 = TextEditingController();
   final TextEditingController _controller2 = TextEditingController();
   final TextEditingController _controller3 = TextEditingController();
-  final TextEditingController _controller4 = TextEditingController();
+  //final TextEditingController _controller4 = TextEditingController();
   final TextEditingController _controller5 = TextEditingController();
   final TextEditingController _controller6 = TextEditingController();
   final TextEditingController _controller7 = TextEditingController();
-  final TextEditingController _controller8 = TextEditingController();
+  // final TextEditingController _controller8 = TextEditingController();
   final TextEditingController _controller9 = TextEditingController();
   final TextEditingController _controller10 = TextEditingController();
   final TextEditingController _controller11 = TextEditingController();
-  final TextEditingController _controller12 = TextEditingController();
+  // final TextEditingController _controller12 = TextEditingController();
   final TextEditingController _controller13 = TextEditingController();
   final TextEditingController _controller14 = TextEditingController();
   final TextEditingController _controller15 = TextEditingController();
-  final TextEditingController _controller16 = TextEditingController();
+  //final TextEditingController _controller16 = TextEditingController();
 
   void cal() {
     setState(() {
-      result1 = ut1 * qt1;
-      result2 = ut2 * qt2;
-      result3 = ut3 * qt3;
-      result4 = ut4 * qt4;
-      result = result1 + result2 + result3 + result4;
+      qty1 = ut1 * rm1;
+      box.put('qty1', qty1);
+      qty2 = ut2 * rm2;
+      box.put('qty2', qty2);
+      qty3 = ut3 * rm3;
+      box.put('qty3', qty3);
+      qty4 = ut4 * rm4;
+      box.put('qty4', qty4);
+      result = qty1 + qty2 + qty3 + qty4;
       print(result);
     });
   }
@@ -266,14 +271,7 @@ class _Pre_pressState extends State<Pre_press> {
                                       width: 280.h,
                                       //color: Colors.white,
                                       //child: Textcell(cell: ''),
-                                      child: TextField(
-                                        controller: _controller4,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: '',
-                                        ),
-                                      ),
+                                      child: Text('$qty1'),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.all(
@@ -352,14 +350,7 @@ class _Pre_pressState extends State<Pre_press> {
                                       width: 280.h,
                                       //color: Colors.white,
                                       //child: Textcell(cell: ''),
-                                      child: TextField(
-                                        controller: _controller8,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: '',
-                                        ),
-                                      ),
+                                      child: Text('$qty2'),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.all(
@@ -438,14 +429,7 @@ class _Pre_pressState extends State<Pre_press> {
                                       width: 280.h,
                                       //color: Colors.white,
                                       //child: Textcell(cell: ''),
-                                      child: TextField(
-                                        controller: _controller12,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: '',
-                                        ),
-                                      ),
+                                      child: Text('$qty3'),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.all(
@@ -524,14 +508,7 @@ class _Pre_pressState extends State<Pre_press> {
                                       width: 280.h,
                                       //color: Colors.white,
                                       //child: Textcell(cell: ''),
-                                      child: TextField(
-                                        controller: _controller16,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: '',
-                                        ),
-                                      ),
+                                      child: Text('$qty4'),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.all(
@@ -592,57 +569,61 @@ class _Pre_pressState extends State<Pre_press> {
                           print(box.get('type1'));
 
                           box.put('rms1', _controller2.text);
-                          rm1 = box.get('rms1');
+                          rm1 = double.parse(box.get('rms1'));
+                          // rm1 = box.get('rms1');
 
                           box.put('type2', _controller5.text);
                           tp2 = box.get('type2');
 
                           box.put('rms2', _controller6.text);
-                          rm2 = box.get('rms2');
+                          rm2 = double.parse(box.get('rms2'));
+                          //rm2 = box.get('rms2');
 
                           box.put('type3', _controller9.text);
                           tp3 = box.get('type3');
 
                           box.put('rms3', _controller10.text);
-                          rm3 = box.get('rms3');
+                          rm3 = double.parse(box.get('rms3'));
+                          //rm3 = box.get('rms3');
 
                           box.put('type4', _controller13.text);
                           tp4 = box.get('type4');
 
                           box.put('rms4', _controller14.text);
-                          rm4 = box.get('rms4');
+                          rm4 = double.parse(box.get('rms4'));
+                          //rm4 = box.get('rms4');
 
                           box.put('unit1', _controller3.text);
                           ut1 = double.parse(box.get('unit1'));
                           print(box.get('unit1'));
 
-                          box.put('qty1', _controller4.text);
-                          qt1 = double.parse(box.get('qty1'));
-                          print(box.get('qty1'));
+                          // box.put('qty1', _controller4.text);
+                          // qt1 = double.parse(box.get('qty1'));
+                          // print(box.get('qty1'));
 
                           box.put('unit2', _controller7.text);
                           ut2 = double.parse(box.get('unit2'));
                           print(box.get('unit2'));
 
-                          box.put('qty2', _controller8.text);
-                          qt2 = double.parse(box.get('qty2'));
-                          print(box.get('qty2'));
+                          // box.put('qty2', _controller8.text);
+                          // qt2 = double.parse(box.get('qty2'));
+                          // print(box.get('qty2'));
 
                           box.put('unit3', _controller11.text);
                           ut3 = double.parse(box.get('unit3'));
                           print(box.get('unit3'));
 
-                          box.put('qty3', _controller12.text);
-                          qt3 = double.parse(box.get('qty3'));
-                          print(box.get('qty3'));
+                          // box.put('qty3', _controller12.text);
+                          // qt3 = double.parse(box.get('qty3'));
+                          // print(box.get('qty3'));
 
                           box.put('unit4', _controller15.text);
                           ut4 = double.parse(box.get('unit4'));
                           print(box.get('unit4'));
 
-                          box.put('qty4', _controller16.text);
-                          qt4 = double.parse(box.get('qty4'));
-                          print(box.get('qty4'));
+                          // box.put('qty4', _controller16.text);
+                          // qt4 = double.parse(box.get('qty4'));
+                          // print(box.get('qty4'));
 
                           cal();
                           box.put('result1', result);

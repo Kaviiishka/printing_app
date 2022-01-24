@@ -104,152 +104,185 @@ class Client extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Date',
-                                      style: TextStyle(
-                                        fontFamily: 'Comfortaa',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.sp,
-                                        color: Color.fromRGBO(255, 255, 255, 1),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 35.h,
-                                      width: 280.h,
-                                      //color: Colors.white,
-                                      child: TextField(
-                                        controller: _dateController,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: 'Enter date',
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10.w),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 30.w),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Date',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20.sp,
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, 1),
+                                          ),
                                         ),
-                                      ),
+                                        Container(
+                                          height: 35.h,
+                                          width: 280.h,
+                                          //color: Colors.white,
+                                          child: TextField(
+                                            controller: _dateController,
+                                            decoration: InputDecoration(
+                                              border: InputBorder.none,
+                                              //labelText: 'Date',
+                                              hintText: 'Enter date',
+                                            ),
+                                          ),
 
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.sp)),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Quatation No',
-                                      style: TextStyle(
-                                        fontFamily: 'Comfortaa',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.sp,
-                                        color: Color.fromRGBO(255, 255, 255, 1),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 35.h,
-                                      width: 280.h,
-                                      //color: Colors.white,
-                                      child: TextField(
-                                        controller: _quotationController,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: 'Enter Quatation No',
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(5.sp)),
+                                          ),
                                         ),
-                                      ),
-
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.sp)),
-                                      ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 40.w),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Quatation No',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20.sp,
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, 1),
+                                          ),
+                                        ),
+                                        Container(
+                                          height: 35.h,
+                                          width: 280.h,
+                                          //color: Colors.white,
+                                          child: TextField(
+                                            controller: _quotationController,
+                                            decoration: InputDecoration(
+                                              border: InputBorder.none,
+                                              //labelText: 'Date',
+                                              hintText: 'Enter Quatation No',
+                                            ),
+                                          ),
+
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(5.sp)),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Client name',
-                                      style: TextStyle(
-                                        fontFamily: 'Comfortaa',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.sp,
-                                        color: Color.fromRGBO(255, 255, 255, 1),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 35.h,
-                                      width: 600.h,
-                                      //color: Colors.white,
-                                      child: TextField(
-                                        controller: _clientController,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: 'Enter Client name',
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10.w),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 30.w),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Client name',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20.sp,
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, 1),
+                                          ),
                                         ),
-                                      ),
+                                        Container(
+                                          height: 35.h,
+                                          width: 600.h,
+                                          //color: Colors.white,
+                                          child: TextField(
+                                            controller: _clientController,
+                                            decoration: InputDecoration(
+                                              border: InputBorder.none,
+                                              //labelText: 'Date',
+                                              hintText: 'Enter Client name',
+                                            ),
+                                          ),
 
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.sp)),
-                                      ),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(5.sp)),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                ],
+                              ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Job description',
-                                      style: TextStyle(
-                                        fontFamily: 'Comfortaa',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.sp,
-                                        color: Color.fromRGBO(255, 255, 255, 1),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 35.h,
-                                      width: 600.h,
-                                      //color: Colors.white,
-                                      child: TextField(
-                                        controller: _jobController,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          //labelText: 'Date',
-                                          hintText: 'Enter Job description',
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10.w),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 30.w),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Job description',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20.sp,
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, 1),
+                                          ),
                                         ),
-                                      ),
+                                        Container(
+                                          height: 35.h,
+                                          width: 600.h,
+                                          //color: Colors.white,
+                                          child: TextField(
+                                            controller: _jobController,
+                                            decoration: InputDecoration(
+                                              border: InputBorder.none,
+                                              //labelText: 'Date',
+                                              hintText: 'Enter Job description',
+                                            ),
+                                          ),
 
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.sp)),
-                                      ),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(5.sp)),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -290,6 +323,7 @@ class Client extends StatelessWidget {
                     Navigator.pushNamedAndRemoveUntil(
                         context, '/pre_press', (route) => false);
                     box.put('date', _dateController.text);
+
                     String date = box.get('date');
                     print(box.get('date'));
                     box.put('quotation', _quotationController.text);

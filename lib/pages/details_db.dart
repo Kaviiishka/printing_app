@@ -63,19 +63,19 @@ class Client_db extends StatelessWidget {
   late String type1 = box1.get('type1');
   late String rms1 = box1.get('rms1');
   late String unit1 = box1.get('unit1');
-  late String qty1 = box1.get('qty1');
+  late double qty1 = box1.get('qty1');
   late String type2 = box1.get('type2');
   late String rms2 = box1.get('rms2');
   late String unit2 = box1.get('unit2');
-  late String qty2 = box1.get('qty2');
+  late double qty2 = box1.get('qty2');
   late String type3 = box1.get('type3');
   late String rms3 = box1.get('rms3');
   late String unit3 = box1.get('unit3');
-  late String qty3 = box1.get('qty3');
+  late double qty3 = box1.get('qty3');
   late String type4 = box1.get('type4');
   late String rms4 = box1.get('rms4');
   late String unit4 = box1.get('unit4');
-  late String qty4 = box1.get('qty4');
+  late double qty4 = box1.get('qty4');
 
   late double result1 = box1.get('result1');
 
@@ -107,7 +107,7 @@ class Client_db extends StatelessWidget {
           Padding(
             padding: EdgeInsets.fromLTRB(180.w, 190.h, 100.w, 10.h),
             child: Container(
-              height: 820.h,
+              height: 940.h,
               width: 1500.w,
               decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.75),
@@ -154,58 +154,61 @@ class Client_db extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                height: 110.h,
-                                width: 1500.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.75),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20.sp)),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.sp),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Date: $date',
-                                        style: TextStyle(
-                                          fontFamily: 'Comfortaa',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
-                                          color: Color.fromRGBO(0, 0, 0, 1),
+                              SingleChildScrollView(
+                                child: Container(
+                                  height: 140.h,
+                                  width: 1500.w,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.75),
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(20.sp)),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(8.sp),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Date: $date',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 22.sp,
+                                            color: Color.fromRGBO(0, 0, 0, 1),
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Quoatation No: $quotation',
-                                        style: TextStyle(
-                                          fontFamily: 'Comfortaa',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
-                                          color: Color.fromRGBO(0, 0, 0, 1),
+                                        Text(
+                                          'Quoatation No: $quotation',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 22.sp,
+                                            color: Color.fromRGBO(0, 0, 0, 1),
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Client Name: $client',
-                                        style: TextStyle(
-                                          fontFamily: 'Comfortaa',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
-                                          color: Color.fromRGBO(0, 0, 0, 1),
+                                        Text(
+                                          'Client Name: $client',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 22.sp,
+                                            color: Color.fromRGBO(0, 0, 0, 1),
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Job description: $job',
-                                        style: TextStyle(
-                                          fontFamily: 'Comfortaa',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22.sp,
-                                          color: Color.fromRGBO(0, 0, 0, 1),
+                                        Text(
+                                          'Job description: $job',
+                                          style: TextStyle(
+                                            fontFamily: 'Comfortaa',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 22.sp,
+                                            color: Color.fromRGBO(0, 0, 0, 1),
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -231,488 +234,524 @@ class Client_db extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                height: 220.h,
-                                width: 1600.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.75),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20.sp)),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.sp),
-                                  child: Column(
-                                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.all(2.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 3.w),
-                                              child: Text(
-                                                'Paper/Board/Sticker/Special Paper',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                              SingleChildScrollView(
+                                child: Container(
+                                  height: 265.h,
+                                  width: 1600.w,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.75),
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(20.sp)),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(8.sp),
+                                    child: Column(
+                                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(2.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 3.w),
+                                                child: Text(
+                                                  'Paper/Board/Sticker/Special Paper',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 60.w),
-                                              child: Text(
-                                                'RMS/PKT',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 60.w),
+                                                child: Text(
+                                                  'RMS/PKT',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 110.w),
-                                              child: Text(
-                                                'Unit Price',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 110.w),
+                                                child: Text(
+                                                  'Unit Price',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 80.w),
-                                              child: Text(
-                                                'QTY',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 80.w),
+                                                child: Text(
+                                                  'QTY',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(2.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 250.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$type1',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                        Padding(
+                                          padding: EdgeInsets.all(2.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 250.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$type1',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$rms1',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$rms1',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$unit1',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$unit1',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qty1',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qty1',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(2.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 250.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$type2',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                        Padding(
+                                          padding: EdgeInsets.all(2.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 250.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$type2',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$rms2',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$rms2',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$unit2',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$unit2',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qty2',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qty2',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(2.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 250.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$type3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                        Padding(
+                                          padding: EdgeInsets.all(2.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 250.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$type3',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$rms3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$rms3',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$unit3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$unit3',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qty3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qty3',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(2.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 250.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$type4',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                        Padding(
+                                          padding: EdgeInsets.all(2.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 250.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$type4',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$rms4',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$rms4',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$unit4',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$unit4',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qty4',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qty4',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(5.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Text(
-                                              'Paper/Board/Sticker cost   ',
-                                              style: TextStyle(
-                                                fontFamily: 'Comfortaa',
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20.sp,
-                                                color:
-                                                    Color.fromRGBO(0, 0, 0, 1),
+                                        Padding(
+                                          padding: EdgeInsets.all(5.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Text(
+                                                'Paper/Board/Sticker cost   ',
+                                                style: TextStyle(
+                                                  fontFamily: 'Comfortaa',
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 20.sp,
+                                                  color: Color.fromRGBO(
+                                                      0, 0, 0, 1),
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              height: 35.h,
-                                              width: 280.h,
-                                              child: Text('$result1'),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
+                                              Container(
+                                                height: 35.h,
+                                                width: 280.h,
+                                                child: Text('$result1'),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -738,579 +777,623 @@ class Client_db extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                height: 260.h,
-                                width: 1500.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.75),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20.sp)),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(3.sp),
-                                  child: Column(
-                                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      //---unit price row-------------------
-                                      Padding(
-                                        padding: EdgeInsets.all(3.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 100.w),
-                                              child: Text(
-                                                'Units',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                              SingleChildScrollView(
+                                child: Container(
+                                  height: 275.h,
+                                  width: 1500.w,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.75),
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(20.sp)),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(3.sp),
+                                    child: Column(
+                                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        //---unit price row-------------------
+                                        Padding(
+                                          padding: EdgeInsets.all(3.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 100.w),
+                                                child: Text(
+                                                  'Units',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 150.w),
-                                              child: Text(
-                                                'Unit price',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 150.w),
+                                                child: Text(
+                                                  'Unit price',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 110.w),
-                                              child: Text(
-                                                'QTY',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 110.w),
+                                                child: Text(
+                                                  'QTY',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
 
-                                      //--type setting------------------------
-                                      Padding(
-                                        padding: EdgeInsets.all(3.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                'Type setting',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
+                                        //--type setting------------------------
+                                        Padding(
+                                          padding: EdgeInsets.all(3.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
                                                 //color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$ut1',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  'Type setting',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  //color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$up1',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qt1',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-
-                                      //-- photography ----------------------
-                                      Padding(
-                                        padding: EdgeInsets.all(3.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                'Photography',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
                                                 //color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$ut2',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$ut1',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$up2',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qt2',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-
-                                      //-- design --------------------------
-                                      Padding(
-                                        padding: EdgeInsets.all(3.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                'Design',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
                                                 //color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$ut3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$up1',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$up3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qt3',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-
-                                      //---proofing -----------------
-                                      Padding(
-                                        padding: EdgeInsets.all(3.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                'Proofing',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
                                                 //color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$ut4',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qt1',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$up4',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qt4',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
 
-                                      //-- translation ------------------
-                                      Padding(
-                                        padding: EdgeInsets.all(3.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                'Translation',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
-                                                ),
-                                              ),
-                                              decoration: BoxDecoration(
+                                        //-- photography ----------------------
+                                        Padding(
+                                          padding: EdgeInsets.all(3.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
                                                 //color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$ut5',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  'Photography',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  //color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$up5',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$ut2',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 30.h,
-                                              width: 220.h,
-                                              //color: Colors.white,
-                                              //child: Textcell(cell: ''),
-                                              child: Text(
-                                                '$qt5',
-                                                style: TextStyle(
-                                                  fontFamily: 'Comfortaa',
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 22.sp,
-                                                  color: Color.fromRGBO(
-                                                      0, 0, 0, 1),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$up2',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
                                                 ),
                                               ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qt2',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
 
-                                      Padding(
-                                        padding: EdgeInsets.all(5.sp),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Text(
-                                              'Total press cost   ',
-                                              style: TextStyle(
-                                                fontFamily: 'Comfortaa',
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20.sp,
-                                                color:
-                                                    Color.fromRGBO(0, 0, 0, 1),
+                                        //-- design --------------------------
+                                        Padding(
+                                          padding: EdgeInsets.all(3.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  'Design',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  //color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              height: 35.h,
-                                              width: 280.h,
-                                              child: Text('$result2'),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(5.sp)),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$ut3',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$up3',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qt3',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      )
-                                    ],
+
+                                        //---proofing -----------------
+                                        Padding(
+                                          padding: EdgeInsets.all(3.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  'Proofing',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  //color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$ut4',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$up4',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qt4',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        //-- translation ------------------
+                                        Padding(
+                                          padding: EdgeInsets.all(3.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  'Translation',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  //color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$ut5',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$up5',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 30.h,
+                                                width: 220.h,
+                                                //color: Colors.white,
+                                                //child: Textcell(cell: ''),
+                                                child: Text(
+                                                  '$qt5',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Comfortaa',
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22.sp,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        Padding(
+                                          padding: EdgeInsets.all(5.sp),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Text(
+                                                'Total press cost   ',
+                                                style: TextStyle(
+                                                  fontFamily: 'Comfortaa',
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 20.sp,
+                                                  color: Color.fromRGBO(
+                                                      0, 0, 0, 1),
+                                                ),
+                                              ),
+                                              Container(
+                                                height: 35.h,
+                                                width: 280.h,
+                                                child: Text('$result2'),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              5.sp)),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -1334,6 +1417,49 @@ class Client_db extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamedAndRemoveUntil(
                         context, '/', (route) => false);
+
+                    box.deleteAll([
+                      'date',
+                      'quotation',
+                      'client',
+                      'job',
+                    ]);
+                    box1.deleteAll([
+                      'type1',
+                      'unit1',
+                      'qty1',
+                      'type2',
+                      'rms2',
+                      'unit2',
+                      'qty2',
+                      'type3',
+                      'rms3',
+                      'unit3',
+                      'type4',
+                      'rms4',
+                      'unit4',
+                      'qty4',
+                      'result1',
+                    ]);
+
+                    box2.deleteAll([
+                      'unit1',
+                      'up1',
+                      'unit2',
+                      'up2',
+                      'unit3',
+                      'up3',
+                      'unit4',
+                      'up4',
+                      'unit5',
+                      'up5',
+                      'qt1',
+                      'qt2',
+                      'qt3',
+                      'qt4',
+                      'qt5',
+                      'result2',
+                    ]);
                   },
                   child: Text(
                     'FINISH',
@@ -1672,3 +1798,4 @@ class Client_db extends StatelessWidget {
     // });
   }
 }
+//finsih code
