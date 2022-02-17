@@ -1,6 +1,6 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
 import 'package:printing_app/components/button.dart';
 import 'package:printing_app/components/temp.dart';
 
@@ -12,8 +12,7 @@ class Press extends StatefulWidget {
 }
 
 class _PressState extends State<Press> {
-  var box = Hive.box<dynamic>('press');
-
+  final database = FirebaseDatabase.instance.reference();
   late double ut1 = 0;
   late double ut2 = 0;
   late double ut3 = 0;
@@ -33,42 +32,38 @@ class _PressState extends State<Press> {
   double result = 0;
 
   final TextEditingController _controller1 = TextEditingController();
-  //final TextEditingController _controller2 = TextEditingController();
   final TextEditingController _controller3 = TextEditingController();
   final TextEditingController _controller4 = TextEditingController();
-  // final TextEditingController _controller5 = TextEditingController();
   final TextEditingController _controller6 = TextEditingController();
   final TextEditingController _controller7 = TextEditingController();
-  //final TextEditingController _controller8 = TextEditingController();
   final TextEditingController _controller9 = TextEditingController();
   final TextEditingController _controller10 = TextEditingController();
-  //final TextEditingController _controller11 = TextEditingController();
   final TextEditingController _controller12 = TextEditingController();
   final TextEditingController _controller13 = TextEditingController();
-  //final TextEditingController _controller14 = TextEditingController();
   final TextEditingController _controller15 = TextEditingController();
 
   void cal() {
     setState(() {
       qt1 = ut1 * up1;
-      box.put('qt1', qt1);
       qt2 = ut2 * up2;
-      box.put('qt2', qt2);
       qt3 = ut3 * up3;
-      box.put('qt3', qt3);
       qt4 = ut4 * up4;
-      box.put('qt4', qt4);
       qt5 = ut5 * up5;
-      box.put('qt5', qt5);
 
       result = qt1 + qt2 + qt3 + qt4 + qt5;
-      box.put('result2', result);
+
       print(result);
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final pressRef1 = database.child('/Press details/Type setting');
+    final pressRef2 = database.child('/Press details/Photography');
+    final pressRef3 = database.child('/Press details/Design');
+    final pressRef4 = database.child('/Press details/Proofing');
+    final pressRef5 = database.child('/Press details/Translations');
+    final pressRef6 = database.child('/Press details/Press cost');
     return Stack(
       children: [
         Temp(),
@@ -589,51 +584,90 @@ class _PressState extends State<Press> {
                         child: RaisedButton(
                           onPressed: () {
                             //--type setting
-                            box.put('unit1', _controller1.text);
-                            ut1 = double.parse(box.get('unit1'));
-                            print(box.get('unit1'));
-
-                            box.put('up1', _controller3.text);
-                            up1 = double.parse(box.get('up1'));
-                            print(box.get('up1'));
+                            ut1 = double.parse(_controller1.text);
+                            up1 = double.parse(_controller3.text);
 
                             //--photography
-                            box.put('unit2', _controller4.text);
-                            ut2 = double.parse(box.get('unit2'));
-                            print(box.get('unit2'));
-
-                            box.put('up2', _controller6.text);
-                            up2 = double.parse(box.get('up2'));
-                            print(box.get('up2'));
+                            ut2 = double.parse(_controller4.text);
+                            up2 = double.parse(_controller6.text);
 
                             //--Design
-                            box.put('unit3', _controller7.text);
-                            ut3 = double.parse(box.get('unit3'));
-                            print(box.get('unit3'));
-
-                            box.put('up3', _controller9.text);
-                            up3 = double.parse(box.get('up3'));
-                            print(box.get('up3'));
+                            ut3 = double.parse(_controller7.text);
+                            up3 = double.parse(_controller9.text);
 
                             //--Proofing
-                            box.put('unit4', _controller10.text);
-                            ut4 = double.parse(box.get('unit4'));
-                            print(box.get('unit4'));
-
-                            box.put('up4', _controller12.text);
-                            up4 = double.parse(box.get('up4'));
-                            print(box.get('up4'));
+                            ut4 = double.parse(_controller10.text);
+                            up4 = double.parse(_controller12.text);
 
                             //--Translations
-                            box.put('unit5', _controller13.text);
-                            ut5 = double.parse(box.get('unit5'));
-                            print(box.get('unit5'));
-
-                            box.put('up5', _controller15.text);
-                            up5 = double.parse(box.get('up5'));
-                            print(box.get('up5'));
+                            ut5 = double.parse(_controller13.text);
+                            up5 = double.parse(_controller15.text);
 
                             cal();
+
+                            //type setting-----------------------------------------------------------
+                            pressRef1
+                                .set({
+                                  'Units': _controller1.text,
+                                  'Unit price': _controller3.text,
+                                  'Qty': qt1,
+                                })
+                                .then((_) => print('press details1'))
+                                .catchError(
+                                    (error) => print('You got error! $error'));
+
+                            //photography-----------------------------------------------------------
+                            pressRef2
+                                .set({
+                                  'Units': _controller4.text,
+                                  'Unit price': _controller6.text,
+                                  'Qty': qt2,
+                                })
+                                .then((_) => print('press details2'))
+                                .catchError(
+                                    (error) => print('You got error! $error'));
+
+                            //design-----------------------------------------------------------
+                            pressRef3
+                                .set({
+                                  'Units': _controller7.text,
+                                  'Unit price': _controller9.text,
+                                  'Qty': qt3,
+                                })
+                                .then((_) => print('press details3'))
+                                .catchError(
+                                    (error) => print('You got error! $error'));
+
+                            //proofing-----------------------------------------------------------
+                            pressRef4
+                                .set({
+                                  'Units': _controller10.text,
+                                  'Unit price': _controller12.text,
+                                  'Qty': qt4,
+                                })
+                                .then((_) => print('press details4'))
+                                .catchError(
+                                    (error) => print('You got error! $error'));
+
+                            //translation-----------------------------------------------------------
+                            pressRef5
+                                .set({
+                                  'Units': _controller13.text,
+                                  'Unit price': _controller15.text,
+                                  'Qty': qt5,
+                                })
+                                .then((_) => print('press details5'))
+                                .catchError(
+                                    (error) => print('You got error! $error'));
+
+                            //cost-----------------------------------------------------------
+                            pressRef6
+                                .set({
+                                  'Total press cost': result,
+                                })
+                                .then((_) => print('press details6'))
+                                .catchError(
+                                    (error) => print('You got error! $error'));
                           },
                           child: Text(
                             'CALCULATE',

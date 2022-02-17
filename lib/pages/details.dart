@@ -1,16 +1,13 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:printing_app/components/button.dart';
 import 'package:printing_app/components/temp.dart';
-//import 'package:print_app/components/textcell.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class Details extends StatefulWidget {
   //const ({Key? key}) : super(key: key);
-  //final appDirectory = await getApplicationSupportDirectory();
-  //Hive.openBox('details');
+
   @override
   State<Details> createState() => _DetailsState();
 }
@@ -28,17 +25,10 @@ class _DetailsState extends State<Details> {
       ],
     );
   }
-
-  //@override
-  //void dispose() {
-  //  Hive.box('details').close();
-  //  super.dispose();
-  //}
 }
 
 class Client extends StatelessWidget {
-  var box = Hive.box('details');
-
+  final database = FirebaseDatabase.instance.reference();
   late String text;
   TextEditingController _dateController = TextEditingController();
   TextEditingController _quotationController = TextEditingController();
@@ -47,6 +37,8 @@ class Client extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final detailsRef =
+        database.child('Client details/' + _quotationController.text);
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -320,18 +312,25 @@ class Client extends StatelessWidget {
                 height: 63.h,
                 child: RaisedButton(
                   onPressed: () {
+                    detailsRef
+                        .set({
+                          'date': _dateController.text,
+                          'quotation': _quotationController.text,
+                          'client': _clientController.text,
+                          'job': _jobController.text,
+                        })
+                        .then((_) => print('client details'))
+                        .catchError((error) => print('You got error! $error'));
                     Navigator.pushNamedAndRemoveUntil(
                         context, '/pre_press', (route) => false);
-                    box.put('date', _dateController.text);
 
-                    String date = box.get('date');
-                    print(box.get('date'));
-                    box.put('quotation', _quotationController.text);
-                    print(box.get('quotation'));
-                    box.put('client', _clientController.text);
-                    print(box.get('client'));
-                    box.put('job', _jobController.text);
-                    print(box.get('job'));
+                    //box.put('date', _dateController.text);
+
+                    //box.put('quotation', _quotationController.text);
+
+                    //box.put('client', _clientController.text);
+
+                    //box.put('job', _jobController.text);
                   },
                   child: Text(
                     'NEXT',

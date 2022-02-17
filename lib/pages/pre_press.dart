@@ -1,9 +1,8 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:printing_app/components/button.dart';
-import 'package:printing_app/components/pre_press_row.dart';
 import 'package:printing_app/components/temp.dart';
-import 'package:hive/hive.dart';
 
 class Pre_press extends StatefulWidget {
   const Pre_press({Key? key}) : super(key: key);
@@ -13,7 +12,7 @@ class Pre_press extends StatefulWidget {
 }
 
 class _Pre_pressState extends State<Pre_press> {
-  var box = Hive.box<dynamic>('pre_press');
+  final database = FirebaseDatabase.instance.reference();
 
   late String tp1;
   late String tp2;
@@ -29,10 +28,6 @@ class _Pre_pressState extends State<Pre_press> {
   late double ut2;
   late double ut3;
   late double ut4;
-  // late double qt1;
-  // late double qt2;
-  // late double qt3;
-  // late double qt4;
 
   late double qty1 = 0;
   late double qty2 = 0;
@@ -40,41 +35,25 @@ class _Pre_pressState extends State<Pre_press> {
   late double qty4 = 0;
   double result = 0;
 
-  // final TextEditingController _controllera1 = TextEditingController();
-  // final TextEditingController _controllerb1 = TextEditingController();
-  // final TextEditingController _controllera2 = TextEditingController();
-  // final TextEditingController _controllerb2 = TextEditingController();
-  // final TextEditingController _controllera3 = TextEditingController();
-  // final TextEditingController _controllerb3 = TextEditingController();
-  // final TextEditingController _controllera4 = TextEditingController();
-  // final TextEditingController _controllerb4 = TextEditingController();
   final TextEditingController _controller1 = TextEditingController();
   final TextEditingController _controller2 = TextEditingController();
   final TextEditingController _controller3 = TextEditingController();
-  //final TextEditingController _controller4 = TextEditingController();
   final TextEditingController _controller5 = TextEditingController();
   final TextEditingController _controller6 = TextEditingController();
   final TextEditingController _controller7 = TextEditingController();
-  // final TextEditingController _controller8 = TextEditingController();
   final TextEditingController _controller9 = TextEditingController();
   final TextEditingController _controller10 = TextEditingController();
   final TextEditingController _controller11 = TextEditingController();
-  // final TextEditingController _controller12 = TextEditingController();
   final TextEditingController _controller13 = TextEditingController();
   final TextEditingController _controller14 = TextEditingController();
   final TextEditingController _controller15 = TextEditingController();
-  //final TextEditingController _controller16 = TextEditingController();
 
   void cal() {
     setState(() {
       qty1 = ut1 * rm1;
-      box.put('qty1', qty1);
       qty2 = ut2 * rm2;
-      box.put('qty2', qty2);
       qty3 = ut3 * rm3;
-      box.put('qty3', qty3);
       qty4 = ut4 * rm4;
-      box.put('qty4', qty4);
       result = qty1 + qty2 + qty3 + qty4;
       print(result);
     });
@@ -82,6 +61,11 @@ class _Pre_pressState extends State<Pre_press> {
 
   @override
   Widget build(BuildContext context) {
+    final pre_pressRef1 = database.child('Prepress details/Prepress row1');
+    final pre_pressRef2 = database.child('Prepress details/Prepress row2');
+    final pre_pressRef3 = database.child('Prepress details/Prepress row3');
+    final pre_pressRef4 = database.child('Prepress details/Prepress row4');
+    final pre_pressRef5 = database.child('Prepress details/Pre press cost');
     return Stack(
       children: [
         Temp(),
@@ -564,70 +548,84 @@ class _Pre_pressState extends State<Pre_press> {
                       height: 63.h,
                       child: RaisedButton(
                         onPressed: () {
-                          box.put('type1', _controller1.text);
-                          tp1 = box.get('type1');
-                          print(box.get('type1'));
+                          rm1 = double.parse(_controller2.text);
 
-                          box.put('rms1', _controller2.text);
-                          rm1 = double.parse(box.get('rms1'));
-                          // rm1 = box.get('rms1');
+                          rm2 = double.parse(_controller6.text);
 
-                          box.put('type2', _controller5.text);
-                          tp2 = box.get('type2');
+                          rm3 = double.parse(_controller10.text);
 
-                          box.put('rms2', _controller6.text);
-                          rm2 = double.parse(box.get('rms2'));
-                          //rm2 = box.get('rms2');
+                          rm4 = double.parse(_controller14.text);
 
-                          box.put('type3', _controller9.text);
-                          tp3 = box.get('type3');
+                          ut1 = double.parse(_controller3.text);
 
-                          box.put('rms3', _controller10.text);
-                          rm3 = double.parse(box.get('rms3'));
-                          //rm3 = box.get('rms3');
+                          ut2 = double.parse(_controller7.text);
 
-                          box.put('type4', _controller13.text);
-                          tp4 = box.get('type4');
+                          ut3 = double.parse(_controller11.text);
 
-                          box.put('rms4', _controller14.text);
-                          rm4 = double.parse(box.get('rms4'));
-                          //rm4 = box.get('rms4');
-
-                          box.put('unit1', _controller3.text);
-                          ut1 = double.parse(box.get('unit1'));
-                          print(box.get('unit1'));
-
-                          // box.put('qty1', _controller4.text);
-                          // qt1 = double.parse(box.get('qty1'));
-                          // print(box.get('qty1'));
-
-                          box.put('unit2', _controller7.text);
-                          ut2 = double.parse(box.get('unit2'));
-                          print(box.get('unit2'));
-
-                          // box.put('qty2', _controller8.text);
-                          // qt2 = double.parse(box.get('qty2'));
-                          // print(box.get('qty2'));
-
-                          box.put('unit3', _controller11.text);
-                          ut3 = double.parse(box.get('unit3'));
-                          print(box.get('unit3'));
-
-                          // box.put('qty3', _controller12.text);
-                          // qt3 = double.parse(box.get('qty3'));
-                          // print(box.get('qty3'));
-
-                          box.put('unit4', _controller15.text);
-                          ut4 = double.parse(box.get('unit4'));
-                          print(box.get('unit4'));
-
-                          // box.put('qty4', _controller16.text);
-                          // qt4 = double.parse(box.get('qty4'));
-                          // print(box.get('qty4'));
+                          ut4 = double.parse(_controller15.text);
 
                           cal();
-                          box.put('result1', result);
-                          print(box.get('result1'));
+                          //row 1-----------------------------------------------------------
+                          pre_pressRef1
+                              .set({
+                                'Paper,Board,Sticker or Special paper':
+                                    _controller1.text,
+                                'rms or pkt': _controller2.text,
+                                'Unit price': _controller3.text,
+                                'Qty': qty1,
+                              })
+                              .then((_) => print('pre press details1'))
+                              .catchError(
+                                  (error) => print('You got error! $error'));
+
+                          //row 2------------------------------------------------------------------
+                          pre_pressRef2
+                              .set({
+                                'Paper,Board,Sticker or Special paper':
+                                    _controller5.text,
+                                'rms or pkt': _controller6.text,
+                                'Unit price': _controller7.text,
+                                'Qty': qty2,
+                              })
+                              .then((_) => print('pre press details2'))
+                              .catchError(
+                                  (error) => print('You got error! $error'));
+
+                          //row 3----------------------------------------------------------------------
+                          pre_pressRef3
+                              .set({
+                                'Paper,Board,Sticker or Special paper':
+                                    _controller9.text,
+                                'rms or pkt': _controller10.text,
+                                'Unit price': _controller11.text,
+                                'Qty': qty3,
+                              })
+                              .then((_) => print('pre press details3'))
+                              .catchError(
+                                  (error) => print('You got error! $error'));
+
+                          //row 4-----------------------------------------------------------------
+                          pre_pressRef4
+                              .set({
+                                'Paper,Board,Sticker or Special paper':
+                                    _controller13.text,
+                                'rms or pkt': _controller14.text,
+                                'Unit price': _controller15.text,
+                                'Qty': qty4,
+                              })
+                              .then((_) => print('pre press details4'))
+                              .catchError(
+                                  (error) => print('You got error! $error'));
+
+                          //total cost-----------------------------------------------------------
+                          pre_pressRef5
+                              .set({
+                                'Paper,Board,Sticker or Special paper cost':
+                                    result,
+                              })
+                              .then((_) => print('pre press details1'))
+                              .catchError(
+                                  (error) => print('You got error! $error'));
                         },
                         child: Text(
                           'CALCULATE',

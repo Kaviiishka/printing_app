@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692570995685",
+    "project_id": "print-web",
+    "storage_bucket": "print-web.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692570995685:android:d0cd8eaeb30b393e9b8d0c",
+        "android_client_info": {
+          "package_name": "com.example.printing_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692570995685-5lplkrnj3jqkh0fkms325g48h9d1ifhj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVD0Pdk-9Jj0Od1KbT0DKOnGRGuwYGMmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692570995685-5lplkrnj3jqkh0fkms325g48h9d1ifhj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

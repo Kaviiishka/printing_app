@@ -26,7 +26,7 @@ class _LandingState extends State<Landing> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Button(text: 'Start New', path: '/details'),
-                    Button(text: 'Previous QUT', path: '/'),
+                    Button(text: 'Previous QUT', path: '/details_db'),
                     Button(text: 'Database', path: '/'),
                   ],
                 ),
